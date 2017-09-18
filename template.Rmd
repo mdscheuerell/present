@@ -2,7 +2,7 @@
 title: "Some insights into creating presentations with RMarkdown"
 subtitle: "Mark Scheuerell"
 author: "NOAA Fisheries<br>Seattle, WA"
-date: `r format(Sys.Date(), "%d %m %Y")`
+date: "18 Sept 2017"
 output:
   xaringan::moon_reader:
     css: "my-theme.css"
