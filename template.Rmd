@@ -1,8 +1,8 @@
 ---
 title: "Some insights into creating presentations with RMarkdown"
 subtitle: "Mark Scheuerell"
-author: "NOAA Fisheries<br>Seattle, WA"
-date: "18 Sept 2017"
+author: "Northwest Fisheries Science Center<br>Seattle, WA"
+date: ""
 output:
   xaringan::moon_reader:
     css: "my-theme.css"
@@ -15,6 +15,82 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
+
+# pic on left plus text
+
+.pull-left[![](figs/me_head.jpeg)]
+
+.pull-right[
+* this pic is awesome
+
+* seriously, though
+]
+
+---
+
+# pic on right plus text
+
+## pic has a black border
+
+.pull-left[
+* this pic is awesome
+
+* seriously, though
+]
+
+.pull-right.black-border[![](figs/me_head.jpeg)]
+
+---
+
+# 2 pics with text on bottom
+
+.pull-left[<img src="figs/me_head.jpeg" alt="" class="black-border">]
+
+.pull-right[![](figs/me_head.jpeg)]
+
+<br>
+Check out these pics!
+
+---
+background-image: url(figs/me_head.jpeg)
+background-size: 300px 300px
+
+# just a pic 1
+
+
+
+---
+
+# just a pic 2
+
+<img src="figs/me_head.jpeg" border="0" alt="" class="black-border">
+
+
+---
+
+# L/R columns 1
+
+.left-column[
+* Wow, this is going well
+
+* Not as bad as last time
+]
+
+.right-column.black-border[![](figs/me_head.jpeg)]
+
+---
+
+# L/R columns 2
+
+.left-column.black-border[![](figs/me_head.jpeg)]
+
+.right-column[
+* Wow, this is going well
+
+* Not as bad as last time
+]
+
+---
 
 # Hello World
 
@@ -154,7 +230,7 @@ coef(summary(fit))
 
 # R Plots
 
-```{r cars, fig.height=4, dev='svg'}
+```{r cars, fig.height=4}
 par(mar = c(4, 4, 1, .1))
 plot(cars, pch = 19, col = 'darkgray', las = 1)
 abline(fit, lwd = 2)
@@ -299,35 +375,6 @@ It is valid R code so you can run it.
 
 ---
 
-# CSS
-
-Among all options in `xaringan::moon_reader`, the most challenging but perhaps also the most rewarding one is `css`, because it allows you to customize the appearance of your slides using any CSS rules or hacks you know.
-
-You can see the default CSS file [here](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/example.css). You can completely replace it with your own CSS files, or define new rules to override the default.
-
----
-
-# CSS
-
-For example, suppose you want to change the font for code from the default "Source Code Pro" to "Ubuntu Mono". You can create a CSS file named, say, `ubuntu-mono.css`:
-
-```css
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-```
-
-Then set the `css` option in the YAML metadata:
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: ["default", "ubuntu-mono.css"]
-```
-
-Here I assume `ubuntu-mono.css` is under the same directory as your Rmd.
-
----
 class: inverse, middle, center
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
 background-size: contain
