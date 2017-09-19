@@ -1,8 +1,4 @@
 ---
-title: "Some insights into creating presentations with RMarkdown"
-subtitle: "Mark Scheuerell"
-author: "Northwest Fisheries Science Center<br>Seattle, WA"
-date: ""
 output:
   xaringan::moon_reader:
     css: "my-theme.css"
@@ -12,10 +8,22 @@ output:
       highlightLines: true
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+```{r setup, include=FALSE, message=FALSE}
+options(htmltools.dir.version = FALSE, servr.daemon = TRUE)
+library(huxtable)
 ```
 
+class: center, middle, inverse
+# This is where you write a really great title, whether it be short or long
+## Mark Scheuerell
+.large[_Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_]
+
+.futnote[mark.scheuerell@noaa.gov]
+
+.citation[@mark_scheuerell]
+
+---
+class: frimg
 # pic on left plus text
 
 .pull-left[![](figs/me_head.jpeg)]
@@ -27,10 +35,11 @@ options(htmltools.dir.version = FALSE)
 ]
 
 ---
+class: frimg
 
-# pic on right plus text
+# .right[pic on right plus text]
 
-## pic has a black border
+## .right[pic has a border]
 
 .pull-left[
 * this pic is awesome
@@ -38,73 +47,63 @@ options(htmltools.dir.version = FALSE)
 * seriously, though
 ]
 
-.pull-right.black-border[![](figs/me_head.jpeg)]
+.pull-right[![](figs/me_head.jpeg)]
 
 ---
+class: frimg, right
 
-# 2 pics with text on bottom
+# pic on right plus text
 
-.pull-left[<img src="figs/me_head.jpeg" alt="" class="black-border">]
+.pull-left-img[
+I could say something about the pic
+
+but at this point there is really very little left to say
+]
 
 .pull-right[![](figs/me_head.jpeg)]
 
-<br>
-Check out these pics!
+---
+class: frimg
+
+# 2 pics with text on bottom
+
+.pull-left[![Nice shot!](figs/me_head.jpeg)]
+
+.pull-right[![](figs/me_head.jpeg)]
+
+.pull-left.center[Center caption: Nice shot!]
+
+.right[Right caption: Not too bad]
 
 ---
+class: frimg
+
+# 2 pics with text on top
+
+.pull-left.center[A centered title]
+
+.pull-right.center[Another centered title]
+
+.pull-left[![](figs/me_head.jpeg)]
+
+.pull-right[![](figs/me_head.jpeg)]
+
+---
+class: frimg, center
 background-image: url(figs/me_head.jpeg)
 background-size: 300px 300px
 
-# just a pic 1
-
-
+# A centered pic (background)
 
 ---
-
-# just a pic 2
-
-<img src="figs/me_head.jpeg" border="0" alt="" class="black-border">
-
+class: frimg, center
+# Centered pic (object); text above
+<img src="figs/me_head.jpeg", alt="", height=300, width=300>
 
 ---
-
-# L/R columns 1
-
-.left-column[
-* Wow, this is going well
-
-* Not as bad as last time
-]
-
-.right-column.black-border[![](figs/me_head.jpeg)]
-
----
-
-# L/R columns 2
-
-.left-column.black-border[![](figs/me_head.jpeg)]
-
-.right-column[
-* Wow, this is going well
-
-* Not as bad as last time
-]
-
----
-
-# Hello World
-
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
-
-```{r eval=FALSE, tidy=FALSE}
-devtools::install_github("yihui/xaringan")
-```
-
---
-
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-This is an R function: .gray-text[`cat`].
+class: frimg, center, bottom
+<img src="figs/me_head.jpeg", alt="", height=300, width=300>
+# Centered pic (object); text below
 
 ---
 class: center, bottom, inverse-black
@@ -130,7 +129,7 @@ background-image: url(`r xaringan:::karl`)
 background-size: cover
 class: center, bottom, inverse
 
-# I was so happy to have discovered remark.js!
+# Karl is looking good!
 
 ---
 class: inverse, middle, center
@@ -138,10 +137,15 @@ class: inverse, middle, center
 # Using xaringan
 
 ---
+class: inverse-blue, middle, center
 
-# xaringan
+# This is getting good
 
-Provides an R Markdown output format .gray-text[`xaringan::moon_reader`] as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+---
+
+# Some code displayed
+
+Here is an example of a YAML code block that uses .gray-text[`xaringan::moon_reader`] as a wrapper for remark.js<sup>*</sup>. 
 
 ```yaml
 ---
@@ -154,86 +158,99 @@ output:
 ---
 ```
 
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
+See the help page .gray-text[`?xaringan::moon_reader`] for all possible options that you can use.
 
 .footnote[\* check out Xie 2017]
-.cite-text[(see Xie 2017 for more details)]
-
----
-
-# remark.js vs xaringan
-
-Some differences between using remark.js (left) and using **xaringan** (right):
-
-.pull-left[
-1. Start with a boilerplate HTML file;
-
-1. Plain Markdown;
-
-1. Write JavaScript to autoplay slides;
-
-1. Manually configure MathJax;
-
-1. Highlight code with `*`;
-
-1. Edit Markdown source and refresh browser to see updated slides;
-]
-
-.pull-right[
-1. Start with an R Markdown document;
-
-1. R Markdown (can embed R/other code chunks);
-
-1. Provide an option `autoplay`;
-
-1. MathJax just works;<sup>*</sup>
-
-1. Highlight code with `{{}}`;
-
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
-]
-
-.footnote[\* Not really. See next page.]
-
----
-
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$\bar{X} = \frac{1}{n}\sum_{i=1}^nX_i \\
-\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t$$
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+.citation[(see Xie 2017 for more details)]
 
 ---
 
 # R Code
 
 ```{r comment='##'}
-# a boring regression
+## a boring regression
 fit = lm(dist ~ 1 + speed, data = cars)
 coef(summary(fit))
 ```
 
 ---
 
-# R Plots
+# Code highlighting
 
-```{r cars, fig.height=4}
-par(mar = c(4, 4, 1, .1))
-plot(cars, pch = 19, col = 'darkgray', las = 1)
-abline(fit, lwd = 2)
+You can use `{{}}` in **R** code chunks to highlight lines of code. To do so, you must also add the option .gray-text[`highlightLines: true`] in the .gray-text[`nature`] part of the YAML.
+
+Input:
+```r
+if(TRUE) {
+  {{ message("Very important!") }}
+}
+```
+Output:
+```{r}
+if(TRUE) {
+  {{ message("Very important!") }}
+}
+```
+
+.blue-text[Note that this is valid R code so it runs just fine.]
+
+---
+
+# Math Expressions 1
+
+You can write math expressions inside a pair of dollar signs, such that
+
+```
+$\alpha + \beta = \gamma$
+```
+
+renders to
+
+$\alpha + \beta = \gamma$
+
+---
+
+# Math Expressions 2
+
+You can use the display style with double dollar signs, such that:
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+renders to
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+--
+You can also group multiple equations with a '\\\' suffix, such that:
+
+```
+$$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t \\
+  \mathbf{y}_t = \mathbf{x}_t + \mathbf{v}_t$$
+```
+renders to
+
+$$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t \\
+  \mathbf{y}_t = \mathbf{x}_t + \mathbf{v}_t$$
+
+---
+
+# R Plots - square
+
+```{r cars, dpi=300, fig.height=4, fig.width=4, out.height="50%", out.width="50%", fig.align='center'}
+par(mai = c(0.9, 0.9, 0.1, 0.1), omi=c(0,0,0,0))
+plot(cars, pch = 19, las = 1)
+abline(fit, lwd = 2, col="gray")
+```
+
+---
+
+# R Plots - rectangle
+
+```{r timeseries, dpi=300, fig.height=4, fig.width=6, out.height="80%", out.width="80%", fig.align='center'}
+par(mai = c(0.8, 0.8, 0.2, 0.2))
+plot.ts(cumsum(rnorm(100)), las=1, col="blue",
+        ylab=expression(italic(x[t])))
 ```
 
 ---
@@ -243,38 +260,32 @@ abline(fit, lwd = 2)
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
 ```{r}
-knitr::kable(head(iris), format = 'html')
+knitr::kable(head(iris, 4), format = 'html',
+             align=c('c', 'c', 'r', 'l', 'r'))
 ```
 
 ---
 
-# Some Tips
+# Tables 2
 
-- When you use the "Infinite Moon Reader" addin in RStudio, your R session will be blocked by default. You can click the red button on the right of the console to stop serving the slides, or use the _daemonized_ mode so that it does not block your R session. To do the latter, you can set the option
+Here is a table using the **huxtable** package.
 
-    ```r
-    options(servr.daemon = TRUE)
-    ```
-    
-    in your current R session, or in `~/.Rprofile` so that it is applied to all future R sessions. I do the latter by myself.
-    
-    To know more about the web server, see the [**servr**](https://github.com/yihui/servr) package.
-
---
-
-- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        yolo: true
-    ```
+```{r}
+ht <- as_hux(head(iris, 4), add_colnames=TRUE)
+right_padding(ht) <- 10; left_padding(ht)  <- 10
+bold(ht)[1,] <- TRUE; italic(ht)[2:5,5] <- TRUE
+top_border(ht)[1,] <- 3
+bottom_border(ht)[1,] <- 1; bottom_border(ht)[5,] <- 3
+number_format(ht) <- 1
+align(ht) <- 'center'
+ht
+```
 
 ---
 
-# Some Tips
+# Timers
 
-- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk:
+- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk (time has units of milliseconds):
 
     ```yaml
     output:
@@ -298,65 +309,7 @@ knitr::kable(head(iris), format = 'html')
 
 ---
 
-# Some Tips
-
-- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.name/xaringan/incremental.html) for examples.
-
-- The option `highlightLines: true` of `nature` will highlight code lines that start with `*` or are wrapped in `{{ }}`;
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          highlightLines: true
-    ```
-
-    See examples on the next page.
-
----
-
-# Some Tips
-
-
-.pull-left[
-An example using a leading `*`:
-
-    ```r
-    if (TRUE) {
-    ** message("Very important!")
-    }
-    ```
-Output:
-```r
-if (TRUE) {
-* message("Very important!")
-}
-```
-
-This is invalid R code, so it is a plain fenced code block that is not executed.
-]
-
-.pull-right[
-An example using `{{}}`:
-
-    `r ''````{r tidy=FALSE}
-    if (TRUE) {
-    *{{ message("Very important!") }}
-    }
-    ```
-Output:
-```{r tidy=FALSE}
-if (TRUE) {
-{{ message("Very important!") }}
-}
-```
-
-It is valid R code so you can run it.
-]
-
----
-
-# Some Tips
+# Using offline
 
 - To make slides work offline, you need to download a copy of remark.js in advance, because **xaringan** uses the online version by default (see the help page `?xaringan::moon_reader`).
 
