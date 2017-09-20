@@ -23,7 +23,57 @@ class: center, middle, inverse
 .citation[@mark_scheuerell]
 
 ---
+
+class: center, middle
+# This is where you write a really great title on a white background
+## Mark Scheuerell
+.large[_Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_]
+
+.futnote.blue-text[mark.scheuerell@noaa.gov]
+
+.citation.blue-text[@mark_scheuerell]
+
+---
+
+# A standard bulleted list
+
+* create something
+
+* discuss it with others
+
+* .red-text[make it red]
+
+---
+
+# A standard numbered list
+
+1. the first thing: create
+
+2. the second thing: discuss
+
+3. the third thing: .red-text[make it red]
+
+---
+
+# Hello there
+## How are you?
+### .red-text[Awesome!]
+
+This slide shows all 3 levels for headers (titles).
+
+It's easy to make .orange-text[colored] .blue-text[text]. To do so, you need to:
+
+1. change the css stylesheet
+
+(press arrow to see next thing);
+
+--
+
+2. Just kidding, that's all
+
+---
 class: frimg
+
 # Landscape pic on left plus text
 
 .img-left-land[![](figs/rampart_lakes.jpg)]
@@ -36,6 +86,7 @@ class: frimg
 
 ---
 class: frimg
+
 # Square pic on left plus text
 
 .pull-left[![](figs/me_head.jpeg)]
@@ -135,17 +186,65 @@ class: center, bottom, inverse-black
 
 ---
 
-# Hello Ninja
-## How are you?
-### .red-text[Awesome!]
+# Math expressions: inline
 
-As a .orange-text[presentation] .blue-text[NINJA], you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+You can write LaTeX math expressions inside a pair of dollar signs, such that
 
-1. The [remark.js](https://remarkjs.com) library;
+```
+$\alpha + \beta = \gamma$
+```
 
-1. The **xaringan** package;
+renders to
 
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+$\alpha + \beta = \gamma$
+
+---
+
+# Math expressions: display
+
+You can use the LaTeX display style with double $. Note that display equations are always centered on the page. For example,
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+renders to
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+--
+You can also group multiple equations with a `\\` suffix, such that:
+
+```
+$$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t \\
+  \mathbf{y}_t = \mathbf{x}_t + \mathbf{v}_t$$
+```
+renders to
+
+$$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t \\
+  \mathbf{y}_t = \mathbf{x}_t + \mathbf{v}_t$$
+
+---
+
+# Math side-by-side
+
+Here are two sets of equations. To do this, you have to use inline math (single $) with each equation on its own line.
+
+.pull-left.center[
+.under[Random walk]
+
+$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t$
+
+$\mathbf{y}_t = \mathbf{x}_t + \mathbf{v}_t$
+]
+
+.pull-right.center[
+.under[Biased random walk]
+
+$\boldsymbol{\theta}_t = \boldsymbol{\theta}_{t-1} + \boldsymbol{\mu} + \boldsymbol{\omega}_t$
+
+$\mathbf{y}_t = \boldsymbol{\theta}_t + \boldsymbol{\eta}_t$
+
+]
 
 ---
 class: inverse-blue, middle, center
@@ -205,45 +304,6 @@ if(TRUE) {
 
 ---
 
-# Math expressions: inline
-
-You can write math expressions inside a pair of dollar signs, such that
-
-```
-$\alpha + \beta = \gamma$
-```
-
-renders to
-
-$\alpha + \beta = \gamma$
-
----
-
-# Math expressions: display
-
-You can use the display style with double dollar signs, such that:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-renders to
-
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-
---
-You can also group multiple equations with a `\\` suffix, such that:
-
-```
-$$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t \\
-  \mathbf{y}_t = \mathbf{x}_t + \mathbf{v}_t$$
-```
-renders to
-
-$$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t \\
-  \mathbf{y}_t = \mathbf{x}_t + \mathbf{v}_t$$
-
----
-
 # R Plots - square
 
 ```{r cars, dpi=300, fig.height=4, fig.width=4, out.height="50%", out.width="50%", fig.align='center'}
@@ -294,7 +354,7 @@ ht
 
 # Timers
 
-- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk (time has units of milliseconds):
+- Slides can be automatically played if you set the .gary-text[`autoplay`] option under .gray-text[`nature`]. Note that time has units of milliseconds.
 
     ```yaml
     output:
@@ -305,7 +365,7 @@ ht
 
 --
 
-- A countdown timer can be added to every page of the slides using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
+- A countdown timer can be added to every slide using the .gary-text[`countdown`] option under .gray-text[`nature`]. Again, time is in milliseconds.
 
     ```yaml
     output:
@@ -314,7 +374,7 @@ ht
           countdown: 60000
     ```
 
-    Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
+You will see a timer counting down from `01:00`, `00:59`, `00:58`, ... When the timer hits 00:00, the timer will continue but the time turns red.
 
 ---
 class: small
@@ -358,13 +418,15 @@ The R package name **xaringan** was derived<sup>1</sup> from **Sharingan**, a d≈
 
 - the "Eye of Hypnotism"
 
-I think a presentation is basically a way to communicate insights to the audience, and a great presentation may even "hypnotize" the audience.<sup>2,3</sup>
+---
 
-.footnote[
-[1] In Chinese, the pronounciation of _X_ is _Sh_ / É/ (as in _shrimp_). Now you should have a better idea of how to pronounce my last name _Xie_.
+class: center, middle
+# This is where you write a really great title on a white background
+## Mark Scheuerell
+.large[_Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_]
 
-[2] By comparison, bad presentations only put the audience to sleep.
+.futnote.blue-text[mark.scheuerell@noaa.gov]
 
-[3] Personally I find that setting background images for slides is a killer feature of remark.js. It is an effective way to bring visual impact into your presentations.
-]
+.citation.blue-text[@mark_scheuerell]
+
 
