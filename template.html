@@ -22,7 +22,19 @@ class: center, middle, inverse
 
 ---
 class: frimg
-# pic on left plus text
+# Landscape pic on left plus text
+
+.img-left-land[![](figs/rampart_lakes.jpg)]
+
+.img-right-text[
+* this pic is awesome
+
+* seriously, though
+]
+
+---
+class: frimg
+# Square pic on left plus text
 
 .pull-left[![](figs/me_head.jpeg)]
 
@@ -35,9 +47,20 @@ class: frimg
 ---
 class: frimg
 
-# .right[pic on right plus text]
+# .right[ Landscape pic on right plus text]
 
-## .right[pic has a border]
+.img-right-land[![](figs/rampart_lakes.jpg)]
+
+.img-left-text[
+* this pic is awesome
+
+* seriously, though
+]
+
+---
+class: frimg, large
+
+# .right[pic on right with larger font size]
 
 .pull-left[
 * this pic is awesome
@@ -55,7 +78,7 @@ class: frimg, right
 .pull-left-img[
 I could say something about the pic
 
-but at this point there is really very little left to say
+but at this point there is really nothing left to say
 ]
 
 .pull-right[![](figs/me_head.jpeg)]
@@ -74,9 +97,9 @@ class: frimg
 .right[Right caption: Not too bad]
 
 ---
-class: frimg
+class: frimg, large
 
-# 2 pics with text on top
+# 2 pics with text on top &amp; bigger font
 
 .pull-left.center[A centered title]
 
@@ -123,18 +146,6 @@ As a .orange-text[presentation] .blue-text[NINJA], you certainly should not be s
 Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
 
 ---
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-size: cover
-class: center, bottom, inverse
-
-# Karl is looking good!
-
----
-class: inverse, middle, center
-
-# Using xaringan
-
----
 class: inverse-blue, middle, center
 
 # This is getting good
@@ -163,7 +174,7 @@ See the help page .gray-text[`?xaringan::moon_reader`] for all possible options 
 
 ---
 
-# R Code
+# R Code with output
 
 
 ```r
@@ -184,13 +195,13 @@ coef(summary(fit))
 
 You can use `{{}}` in **R** code chunks to highlight lines of code. To do so, you must also add the option .gray-text[`highlightLines: true`] in the .gray-text[`nature`] part of the YAML.
 
-Input:
+.orange-text[Input:]
 ```r
 if(TRUE) {
   {{ message("Very important!") }}
 }
 ```
-Output:
+.blue-text[Output:]
 
 ```r
 if(TRUE) {
@@ -202,11 +213,9 @@ if(TRUE) {
 ## Very important!
 ```
 
-.blue-text[Note that this is valid R code so it runs just fine.]
-
 ---
 
-# Math Expressions 1
+# Math expressions: inline
 
 You can write math expressions inside a pair of dollar signs, such that
 
@@ -220,7 +229,7 @@ renders to
 
 ---
 
-# Math Expressions 2
+# Math expressions: display
 
 You can use the display style with double dollar signs, such that:
 
@@ -232,7 +241,7 @@ renders to
 `$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
 
 --
-You can also group multiple equations with a '\\\' suffix, such that:
+You can also group multiple equations with a `\\` suffix, such that:
 
 ```
 $$\mathbf{x}_t = \mathbf{x}_{t-1} + \mathbf{w}_t \\
@@ -407,6 +416,7 @@ ht
     Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
 
 ---
+class: small
 
 # Using offline
 
@@ -434,6 +444,7 @@ background-size: contain
 # Naruto
 
 ---
+class: small
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 background-size: 100px
 background-position: 90% 8%

@@ -3,10 +3,16 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic);
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
 
-body { font-family: 'Droid Sans', 'sans-serif'; }
+body {
+  font-family: 'Droid Sans', 'sans-serif';
+  font-size: 120%;
+}
 h1, h2, h3 {
   font-family: 'Yanone Kaffeesatz';
   font-weight: normal;
+}
+p {
+  font-size: 120%;
 }
 a, a > code {
   color: rgb(249, 38, 114);
@@ -25,8 +31,8 @@ a, a > code {
 .bb {
   border: 5px solid #000000;
 }
-.large { font-size: 130% }
-.small { font-size: 70% }
+.large { font-size: 125% }
+.small { font-size: 75% }
 .blue-text { color: #488fdf }
 .orange-text { color: #ff8100 }
 .red-text { color: #c10101 }
@@ -115,6 +121,22 @@ a, a > code {
 }
 .pull-right ~ * {
   clear: both;
+}
+.img-left-land {
+  float: left;
+  width: 60%;
+}
+.img-right-text {
+  float: right;
+  width: 35%;
+}
+.img-right-land {
+  float: right;
+  width: 60%;
+}
+.img-left-text {
+  float: left;
+  width: 35%;
 }
 img, video, iframe {
   max-width: 100%;
