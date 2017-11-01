@@ -418,15 +418,6 @@ The R package name **xaringan** was derived<sup>1</sup> from **Sharingan**, a d≈
 
 - the "Eye of Hypnotism"
 
----
 
-class: center, middle
-# This is where you write a really great title on a white background
-## Mark Scheuerell
-.large[_Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_]
-
-.futnote.blue-text[mark.scheuerell@noaa.gov]
-
-.citation.blue-text[@mark_scheuerell]
 
 
