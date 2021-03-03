@@ -16,9 +16,9 @@ library(huxtable)
 class: center, middle, inverse
 # This is where you write a really great title, whether it be short or long
 ## Mark Scheuerell
-.large[_Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_]
+_U.S. Geological Survey<br>Washington Cooperative Fish and Wildlife Research Unit<br>School of Aquatic and Fishery Sciences<br>University of Washington<br>Seattle, WA_
 
-.futnote[mark.scheuerell@noaa.gov]
+.futnote[scheuerl@uw.edu]
 
 .citation[@mark_scheuerell]
 
@@ -27,9 +27,9 @@ class: center, middle, inverse
 class: center, middle
 # This is where you write a really great title on a white background
 ## Mark Scheuerell
-.large[_Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_]
+_U.S. Geological Survey<br>Washington Cooperative Fish and Wildlife Research Unit<br>School of Aquatic and Fishery Sciences<br>University of Washington<br>Seattle, WA_
 
-.futnote.blue-text[mark.scheuerell@noaa.gov]
+.futnote.purple-text[scheuerl@uw.edu]
 
 .citation.blue-text[@mark_scheuerell]
 
@@ -401,23 +401,4 @@ class: small
 class: inverse, middle, center
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
 background-size: contain
-
-# Naruto
-
----
-class: small
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-background-size: 100px
-background-position: 90% 8%
-
-# Sharingan
-
-The R package name **xaringan** was derived<sup>1</sup> from **Sharingan**, a dōjutsu in the Japanese anime _Naruto_ with two abilities:
-
-- the "Eye of Insight"
-
-- the "Eye of Hypnotism"
-
-
-
 
